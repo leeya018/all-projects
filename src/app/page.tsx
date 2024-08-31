@@ -1,11 +1,20 @@
 "use client";
+import Modal from "@/components/Modal";
+import ProjectCard from "@/components/ProjectCard";
 import { projectDetails } from "@/util";
 import Image from "next/image";
-import { useParams, useRouter } from "next/navigation";
+import { useState } from "react";
 
 export default function MainPage() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [projectInd, setProjectInd] = useState(-1);
+
   return (
     <div className="container mx-auto p-4">
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <ProjectCard projectInd={0} />
+        {/* <div>stienaitsenietnsrie</div> */}
+      </Modal>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projectDetails.map((project, key) => (
           <div
@@ -28,6 +37,15 @@ export default function MainPage() {
             <div className="p-3">
               <h4 className="text-lg font-semibold mt-4">{project.name}</h4>
               <p className="mt-4 line-clamp-3">{project.description}</p>
+              <p
+                className="mt-4 line-clamp-3"
+                onClick={() => {
+                  setProjectInd(key);
+                  setIsModalOpen(true);
+                }}
+              >
+                Show Details
+              </p>
             </div>
           </div>
         ))}

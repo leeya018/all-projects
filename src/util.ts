@@ -4,6 +4,7 @@ export type Project = {
   name: string;
   description: string;
   folderUrl: string;
+  link: string;
 };
 
 export const projectDetails: Project[] = [
@@ -12,6 +13,7 @@ export const projectDetails: Project[] = [
     description:
       "get all your affirmtions in one place so you can practice them in anytiem and use all your sense for that .",
     folderUrl: "/images/affirmations",
+    link: "https://affirmations-lee.netlify.app/",
   },
 ];
 
