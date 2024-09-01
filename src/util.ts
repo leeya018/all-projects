@@ -8,7 +8,34 @@ export type Project = {
   imagesAmount: number;
 };
 
-export const projectDetails: Project[] = [
+export const clientProjects: Project[] = [
+  {
+    name: "E-golden",
+    description:
+      "A big company working in Portugal that is helping people to make realocaiton to Portugal help with tax issuse and build bussinesses and realestate, show the info and serivece",
+    folderUrl: "/images/e-golden",
+    imagesAmount: 4,
+    link: "https://e-golden.netlify.app/",
+  },
+  {
+    name: "shosh-gallery",
+    description:
+      "my mom's gallery with all the work that she has done with Acrilic , painting the nature in Israel",
+    folderUrl: "/images/shosh-gallery",
+    imagesAmount: 4,
+    link: "https://shosh-gallery.netlify.app/",
+  },
+  {
+    name: "orly-waissman",
+    description:
+      "A site for my cousine which is a singer and also treat peolple with yoga ",
+    folderUrl: "/images/orly-waissman",
+    imagesAmount: 4,
+    link: "https://orly-waissman.netlify.app/",
+  },
+];
+
+export const myProjects: Project[] = [
   {
     name: "Affirmations",
     description:
@@ -95,3 +122,8 @@ export const githubUrl = "https://github.com/leeya018/work";
 const today = new Date();
 export const curr_m = today.getMonth() + 1;
 export const curr_y = today.getFullYear();
+
+export const project_types = {
+  my: "my",
+  clients: "clients",
+};

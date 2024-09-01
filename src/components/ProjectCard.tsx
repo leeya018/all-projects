@@ -1,37 +1,35 @@
-import { projectDetails } from "@/util";
+import { Project } from "@/util";
 import Link from "next/link";
 import React from "react";
 
 interface ProjectCardProps {
-  projectInd: number;
+  project: Project | null;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ projectInd }) => {
-  if (projectInd === -1) return;
+const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
+  if (project === null) return;
 
   return (
     <div
       className="p-6 duration-300 relative overflow-y-scroll 
       scrollbar-hide  max-h-[80vh]"
     >
-      <h2 className="text-2xl font-semibold">
-        {projectDetails[projectInd].name}
-      </h2>
-      <p className="mt-2">{projectDetails[projectInd].description}</p>
+      <h2 className="text-2xl font-semibold">{project.name}</h2>
+      <p className="mt-2">{project.description}</p>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4 ">
-        {Array(projectDetails[projectInd].imagesAmount)
+        {Array(project.imagesAmount)
           .fill(0)
           .map((_, index) => (
             <img
               key={index}
-              src={projectDetails[projectInd].folderUrl + `/${index + 1}.png`}
+              src={project.folderUrl + `/${index + 1}.png`}
               className="w-full h-auto rounded hover:scale-105 duration-1000"
             />
           ))}
       </div>
       <div className="mt-8 ">
         <Link
-          href={projectDetails[projectInd].link}
+          href={project.link}
           target="_blank"
           className="text-blue-500 hover:text-blue-600 text-xl hover:underline"
         >
