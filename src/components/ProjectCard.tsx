@@ -19,13 +19,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ projectInd }) => {
         className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4 overflow-y-scroll 
       scrollbar-hide  max-h-[60vh]"
       >
-        {[1, 2, 3, 4].map((ind, index) => (
-          <img
-            key={index}
-            src={projectDetails[projectInd].folderUrl + `/${ind}.png`}
-            className="w-full h-auto rounded hover:scale-105 duration-1000"
-          />
-        ))}
+        {Array(projectDetails[projectInd].imagesAmount)
+          .fill(0)
+          .map((_, index) => (
+            <img
+              key={index}
+              src={projectDetails[projectInd].folderUrl + `/${index + 1}.png`}
+              className="w-full h-auto rounded hover:scale-105 duration-1000"
+            />
+          ))}
       </div>
       <div className="mt-8 ">
         <Link
