@@ -15,6 +15,13 @@ export const projectDetails: Project[] = [
     folderUrl: "/images/affirmations",
     link: "https://affirmations-lee.netlify.app/",
   },
+  {
+    name: "Work",
+    description:
+      "get all the things that you need in work done for you in an easy way, best thingst si the shifts that you can add and track your wage",
+    folderUrl: "/images/work",
+    link: "https://work-lee.netlify.app/",
+  },
 ];
 
 export const getDbUrl = () => {

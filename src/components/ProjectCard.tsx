@@ -15,7 +15,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ projectInd }) => {
         {projectDetails[projectInd].name}
       </h2>
       <p className="mt-2">{projectDetails[projectInd].description}</p>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4 overflow-y-scroll scrollbar-hide  max-h-screen">
+      <div
+        className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4 overflow-y-scroll 
+      scrollbar-hide  max-h-[60vh]"
+      >
         {[1, 2, 3, 4].map((ind, index) => (
           <img
             key={index}
