@@ -23,8 +23,11 @@ export default function ProjectList({ projects, type }: ProjectLitsProps) {
 
       <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project, key) => (
-          <div className="rounded-t-lg  pb-6  border  border-gray-700  overflow-hidden flex flex-col justify-between">
-            <Link key={key} href={project.link} target="_blank">
+          <div
+            key={key}
+            className="rounded-t-lg  pb-6  border  border-gray-700  overflow-hidden flex flex-col justify-between"
+          >
+            <Link href={project.link} target="_blank">
               <div key={key}>
                 <div className="border-2 flex justify-center items-center">
                   <Image
